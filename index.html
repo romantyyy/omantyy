@@ -82,21 +82,20 @@
           <h3>n</h3>
             <h3>t</h3>
             <h3>y</h3>
-            <h3>y</h3
+            <h3>y</h3>
             <h1></h1>
             <h1>🦹🏿‍♂️</h1>
            
       <h3>👽Jasa Cek Data Bocor Lacak Target👽</h3>
       <h3>👽minat klik Wtsp disamping Github👽</h3>
       <h1>❕</h1>
-  </div>
+
     <div class="sosmed">
-    <a href="https://instagram.com/rmnty_" target="_blank">Instagram🕴</a> |
-    <a href="https://github.com/romantyyy" target="_blank">GitHub👽</a> |
-    <a href="https://wa.me/6281236863710" target="_blank">WhatsApp☠️</a>
-     <a href="https://shifttech-web.vercel.app/" target="_blank">Jasa Web☠️</a>
-  </div>
-  
+      <a href="https://instagram.com/rmnty_" target="_blank">Instagram🕴</a> |
+      <a href="https://github.com/romantyyy" target="_blank">GitHub👽</a> |
+      <a href="https://wa.me/6281236863710" target="_blank">WhatsApp☠️</a>
+      <a href="https://shifttech-web.vercel.app/" target="_blank">Jasa Web☠️</a>
+    </div>
 </section>
 
 <!-- TENTANG -->
@@ -105,11 +104,10 @@
   <p>
     beli beli liat wkwkwkwk
     Open Jasa Cek Data Bocor dan Lainya Lacak Posisi Target
-    👙👙👙👙👙👙🥲🙏☺🙏🙏☺🫓🧡🏃‍♂️🫓🏃‍♂️🫓🥸🥸🫓🫓🫓🧡💔❤💔💔🙉🐜🐧🐧🦉🐝🐝🐗🙊🐥🪱🕷🦂🪱🐟🕸🐜🪱🐗🪱🪱🦉🐦🐦🐟🐊🐳🦀🐴🦖🪲🚆🚃🚝🚂🎠🌋🏜🚂🚃🚃🚃🚔🚤🎠🚄✈️🚞🚞🏍🚒🚛🚛🏍🛳🚏🚏🏰🎠⛲🗺🗽🛥🚊🚟🚝🚑🏍🚂🚤🛸🚃🚉🚉🛳⛽🛸🚂🚂🛳🚆🛳🚄🚐🚡🚡🚡🏍🚃🚤⛽⛲⛲⛲⛲⛲⛲✈️🛳🛳
-     <h3>ini buat lu sn Gabut coba cek No lu bocor sn </h3>
-     <h3>👇</h3>
-     <a href="https://tredict-web.vercel.app" target="_blank">🧌CEK
-     SUDAH☠️</a>
+  </p>
+  <h3>ini buat lu sn Gabut coba cek No lu bocor sn </h3>
+  <h3>👇</h3>
+  <a href="https://tredict-web.vercel.app" target="_blank">🧌CEK SUDAH☠️</a>
 </section>
 
 <!-- PRODUK -->
@@ -133,6 +131,7 @@
 
 <footer>
   <p>© 2025 Romanty | All Rights Reserved</p>
+  <p>Total Pengunjung: <span id="visitor-count">0</span></p>
 </footer>
 
 <script>
@@ -145,6 +144,13 @@ function loadPage(id){
     document.getElementById(id).classList.add('active');
   },1000);
 }
+
+// Visitor Counter via CountAPI
+fetch("https://api.countapi.xyz/hit/romanty-portfolio/visitors")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visitor-count").innerText = data.value;
+  });
 </script>
 
 </body>
