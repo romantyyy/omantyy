@@ -135,43 +135,22 @@
 </footer>
 
 <script>
-function loadPage(id){
-  const loader = document.getElementById('loading');
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  loader.style.display='flex';
-  setTimeout(()=>{
-    loader.style.display='none';
-    document.getElementById(id).classList.add('active');
-  },1000);
-}
-
-// =====================================
-// VISITOR COUNTER ADVANCED (COUNTAPI)
-// =====================================
-
 async function updateVisitorCount() {
-  const counterKey = "romanty-portfolio-2025"; 
+  const counter = "romanty-portfolio-2025";
   const localKey = "visited-romanty";
 
+  // Hit pengunjung unik (1 per device)
   if (!localStorage.getItem(localKey)) {
-    try {
-      const res = await fetch(
-        `https://api.countapi.xyz/update/${counterKey}/visitors?amount=1&ttl=86400`
-      );
-      const data = await res.json();
-      document.getElementById("visitor-count").innerText = data.value;
-      localStorage.setItem(localKey, "yes");
-
-    } catch (error) {
-      console.log("Gagal update visitor:", error);
-    }
-  } else {
-    const res = await fetch(`https://api.countapi.xyz/get/${counterKey}/visitors`);
-    const data = await res.json();
-    document.getElementById("visitor-count").innerText = data.value;
+    await fetch(`https://api.countapi.xyz/hit/${counter}/visitors`);
+    localStorage.setItem(localKey, "true");
   }
-}
 
+  // Ambil angka terbaru
+  const res = await fetch(`https://api.countapi.xyz/get/${counter}/visitors`);
+  const data = await res.json();
+
+  document.getElementById("visitor-count").innerText = data.value;
+}
 updateVisitorCount();
 </script>
 
